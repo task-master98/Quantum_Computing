@@ -25,8 +25,8 @@ def simulate_circuit(circuit):
     return result
 
 def main():
-    # secret_function = [np.random.randint(0, 1) for _ in range(2)]
-    secret_function = np.array([0, 1])
+    secret_function = [np.random.randint(0, 2) for _ in range(2)]
+    # secret_function = np.array([1, 1])
     oracle = make_oracle(q0, q1, secret_function)
     circuit = create_deutch_circuit(q0, q1, oracle)
     result= simulate_circuit(circuit)

@@ -20,10 +20,12 @@ def simulate_circuit(circuit, repetitions, result_type=None):
 
 def main():
     circuit = create_circuit(q0, q1, q2)
-    result = simulate_circuit(circuit, 1000, 'simulation')
+    result = simulate_circuit(circuit, 1000, 'output_vector')
     print(circuit)
-    print(result.histogram(key='m'))
-
+    print(result)
+    result = simulate_circuit(circuit, 1000, '')
+    print(result)
+    
 if __name__ == '__main__':
     main()
 

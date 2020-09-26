@@ -20,8 +20,6 @@ def create_teleportation_circuit(q0, q1, q2, ranX, ranY):
 def simulate_circuit(circuit):
     sim = cq.Simulator()
     result = sim.simulate(circuit)
-     
-    
     return result
 
 def main():
@@ -32,7 +30,6 @@ def main():
     sim = cq.Simulator()
     message = sim.simulate(cq.Circuit([cq.X(q0)**ranX, cq.Y(q0)**ranY]))
     expected = message.bloch_vector_of(q0)
-    
     circuit = create_teleportation_circuit(msg, alice, bob, ranX, ranY)
     result = simulate_circuit(circuit)
     final_vector = result.bloch_vector_of(bob)
